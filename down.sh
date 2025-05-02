@@ -19,19 +19,19 @@ docker compose down
 
 # Prune the containers
 echo "Pruning containers..."
-docker container prune
+docker container prune -f
 
 # Prune the images
 echo "Pruning images..."
-docker image prune
+docker image prune -f
 
 # Prune the volumes
 echo "Pruning volumes..."
-docker volume prune
+docker volume prune -f
 
 # Prune the networks
 echo "Pruning networks..."
-docker network prune
+docker network prune -f
 
 # Exit successfully
 exit 0
