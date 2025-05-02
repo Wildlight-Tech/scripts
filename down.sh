@@ -18,20 +18,12 @@ echo "Closing containers..."
 docker compose down
 
 # Prune the containers
-echo "Pruning containers..."
-docker container prune -f
-
-# Prune the images
-echo "Pruning images..."
-docker image prune -f
+echo "Pruning images/containers/networks..."
+docker system prune -a --volumes -f
 
 # Prune the volumes
 echo "Pruning volumes..."
-docker volume prune -f
-
-# Prune the networks
-echo "Pruning networks..."
-docker network prune -f
+docker volume prune -a -f
 
 # Exit successfully
 exit 0
