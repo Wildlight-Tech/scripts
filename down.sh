@@ -13,17 +13,25 @@ fi
 # Navigate to the directory containing your compose file
 cd "$WORKDIR" || { echo "Failed to change directory to $WORKDIR"; exit 1; }
 
-# Pull the latest images
-echo "Pulling latest Docker images..."
-docker compose pull
+# Stop the containers
+echo "Closing containers..."
+docker compose down
 
-# Start the containers in detached mode
-echo "Starting containers..."
-docker compose up -d
+# Prune the containers
+echo "Pruning containers..."
+docker container prune
 
-# Show running containers
-echo "Current running containers:"
-docker ps
+# Prune the images
+echo "Pruning images..."
+docker image prune
+
+# Prune the volumes
+echo "Pruning volumes..."
+docker volume prune
+
+# Prune the networks
+echo "Pruning networks..."
+docker network prune
 
 # Exit successfully
 exit 0
