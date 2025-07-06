@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the working directory
-WORKDIR="$HOME/Documents/DARC/BarSync/helm-values"
+WORKDIR="$HOME/Documents/DARC/Brands/AIHG/App/helm-values"
 
 # Check if Docker is installed
 if ! command -v docker &> /dev/null
